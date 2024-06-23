@@ -32,7 +32,9 @@ def iterativeReverseArr(arr, start, end):
     # Time Complexity: O(n)
     # Auxiliary Space Complexity: O(1)
     while start < end:
-        arr[start], arr[end] = arr[end], arr[start]
+        temp = arr[start]
+        arr[start] = arr[end]
+        arr[end] = temp
         start += 1
         end -= 1
     print("reverse array using iterative: ", arr)
