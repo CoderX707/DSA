@@ -73,3 +73,39 @@ def search_in_sorted_matrix(arr):
 
 
 search_in_sorted_matrix(array2)
+
+# matrix diagonal elements (x)
+# 1 5 6
+# 0 2 1
+# 3 8 9
+# first diagonal = 1 2 9
+# second diagonal = 6 2 3
+matrix_arr = [[1, 5, 6], [0, 2, 1], [3, 8, 9]]
+
+
+def matrix_diagonal_elements(matrix):
+    # Extracts elements from the main diagonals of a matrix.
+
+    # Time Complexity: O(n), where n is the total number of elements in the matrix.
+    # Auxiliary Space Complexity: O(1).
+    # Pros: Simple and direct approach to extract diagonal elements.
+    # Cons: Assumes the matrix is square or can handle rectangular matrices
+    n = len(matrix)
+    first_diagonal = []
+    second_diagonal = []
+    first_index = 0
+    last_index = len(matrix[0]) - 1
+    for i in range(n):
+        for j in range(len(matrix[i])):
+            print(first_index, j)
+            if first_index == j:
+                first_diagonal.append(matrix[i][j])
+            if last_index == j:
+                second_diagonal.append(matrix[i][j])
+        first_index += 1
+        last_index -= 1
+    print(f"first_diagonal: {first_diagonal}")
+    print(f"second_diagonal: {second_diagonal}")
+
+
+matrix_diagonal_elements(matrix_arr)
