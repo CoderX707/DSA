@@ -97,7 +97,6 @@ def matrix_diagonal_elements(matrix):
     last_index = len(matrix[0]) - 1
     for i in range(n):
         for j in range(len(matrix[i])):
-            print(first_index, j)
             if first_index == j:
                 first_diagonal.append(matrix[i][j])
             if last_index == j:
